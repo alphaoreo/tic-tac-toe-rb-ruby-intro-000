@@ -118,7 +118,7 @@ def play(board)
     puts "Congratulations #{champ}!"
     response= "Congratulations #{champ}!"
     return response
-  else
+  elsif draw?(board)
     puts "Cat's Game!"
     response = "Cat's Game!"
     return response
