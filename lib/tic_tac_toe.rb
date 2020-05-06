@@ -72,12 +72,33 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
+def turn_count(board)
+  level=0
+  board.each do |spot|
+    if spot == "X" || spot =="O"
+      level += 1
+    end
+  end
+  return level
+end
+
+def current_player(board)
+  player = ""
+  level = turn_count(board)
+  if level % 2 == 0
+    player = "X"
+  else
+    player= "O"
+  end
+  return player
+end
+
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
-    move(board, index)
+    move(board,index,current_player(board))
     display_board(board)
   else
     turn(board)
