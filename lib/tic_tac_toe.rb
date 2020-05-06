@@ -116,7 +116,11 @@ def play(board)
   if won?(board)
     champ= winner(board)
     puts "Congratulations #{champ}!"
+    response= "Congratulations #{champ}!"
+    return response
   else
     puts "Cat's Game!"
+    response = "Cat's Game!"
+    return response
   end
 end
