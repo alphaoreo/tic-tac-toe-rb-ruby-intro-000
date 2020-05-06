@@ -107,8 +107,11 @@ end
 
 # Define your play method below
 def play(board)
-  until over?(board) do
+  9.times do
     turn(board)
+    if over?(board)
+      break
+    end
   end
   if win?(board)
     puts "Congratulations #{winner(board)}!"
