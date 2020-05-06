@@ -107,20 +107,18 @@ end
 
 # Define your play method below
 def play(board)
-  9.times do
+  while !(over?(board)) do
     turn(board)
-    if over?(board)
-      break
-    end
+    
   end
   if won?(board)
     champ= winner(board)
     puts "Congratulations #{champ}!"
-    response= "Congratulations #{champ}!"
-    return response
+    #response= "Congratulations #{champ}!"
+  #  return response
   elsif draw?(board)
     puts "Cat's Game!"
-    response = "Cat's Game!"
-    return response
+    #response = "Cat's Game!"
+  #  return response
   end
 end
