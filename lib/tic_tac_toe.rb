@@ -112,7 +112,7 @@ def play(board)
     if over?(board)
       if win?(board)
         puts "Congratulations #{winner(board)}!"
-      else draw?(board)
+      else
         puts "Cats Game!"
       break
     end
