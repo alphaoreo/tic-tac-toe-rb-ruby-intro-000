@@ -109,5 +109,8 @@ end
 def play(board)
   9.times do
     turn(board)
+    if over?(board)
+      break
+    end
   end
 end
