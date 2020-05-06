@@ -110,6 +110,10 @@ def play(board)
   9.times do
     turn(board)
     if over?(board)
+      if win?(board)
+        puts "Congratulations #{winner(board)}!"
+      elsif draw?(board)
+        puts "Cats Game!"
       break
     end
   end
